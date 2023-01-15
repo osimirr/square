@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- I started to learn Javascript few weeks ago. Here's my first projects in JS. I'm learning this from udemy courses. 
+    I think that it's a short codeline so I type this in index file, there's no need to another file for script. 
+    In bigger projects I will make code in separate file. -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 1000vh;
+        }
+
+        .square {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            background-color: royalblue;
+            text-align: center;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+
+
+    <script>
+
+        let square = document.querySelector('.square');
+        let size = 30;
+        let grow = true;
+
+
+
+
+        window.addEventListener('scroll', function () {
+            if (grow) {
+                size += 10;
+                square.textContent = size;
+                square.style.height = size + 'px';
+                square.style.width = size + 'px';
+                square.style.lineHeight = size + 'px'
+            }
+            else {
+                size -= 10;
+                square.textContent = size;
+                square.style.height = size + 'px';
+                square.style.width = size + 'px';
+                square.style.lineHeight = size + 'px'
+            }
+
+            if (size >= 800) {
+                grow = !grow;
+            }
+            else if (size == 10) {
+                grow = !grow;
+            }
+
+
+        }
+        )
+
+    </script>
+</body>
+
+</html>
